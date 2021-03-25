@@ -8,10 +8,11 @@ const COLORS = {
   font: "hsl(0, 0%, 7%)",
   lightFont: "hsl(0, 0%, 70%)",
   border: "hsl(0, 0%, 92%)",
+  background: "hsl(0, 0%, 95%)",
 };
 
 const TYPOGRAPHY = {
-  mainTitle: `600 24px Inter`,
+  mainTitle: `700 42px Inter`,
   subtitle: `500 18x Inter`,
   body: `400 14px Inter`,
   small: `500 10px Inter`,
@@ -43,7 +44,7 @@ const DEVICE = {
   mobileS: `(min-width: 320px)`,
   mobileM: `(min-width: 375px)`,
   mobileL: `(min-width: 425px)`,
-  tablet: `(min-width: 768px)`,
+  tablet: `(min-width: 767px)`,
   laptop: `(min-width: 1024px)`,
   laptopL: `(min-width: 1440px)`,
   desktop: `(min-width: 2560px)`,

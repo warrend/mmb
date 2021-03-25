@@ -11,6 +11,9 @@ import {
   InnerModal,
   Info,
   Close,
+  Top,
+  Heading,
+  SiteDescription,
 } from "./styles";
 import { articles } from "articles";
 import Modal from "components/Modal";
@@ -62,6 +65,13 @@ function Main() {
 
   return (
     <Wrapper>
+      <Top>
+        <Heading>My Mom's Beatles</Heading>
+        <SiteDescription>
+          My mom collected just about every Beatles article she could get her
+          hands on in the 1960s. Below are some highlights from the collection.
+        </SiteDescription>
+      </Top>
       <Body>
         {images.map((i) => (
           <Image
