@@ -8,7 +8,6 @@
 html {
   font-family: "Inter", sans-serif;
   font-size: 15px;
-  border-top: 15px solid hsl(0, 0%, 90%);
 }
 @supports (font-variation-settings: normal) {
   html {

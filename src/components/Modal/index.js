@@ -29,4 +29,4 @@ Modal.defaultProps = {
   open: false,
 };
 
-export default BasicModal;
+export default Modal;
