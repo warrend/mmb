@@ -81,7 +81,7 @@ function Main() {
           />
         ))}
       </Body>
-      <Modal open={open}>
+      <Modal open={open} setOpen={setOpen}>
         <InnerModal>
           <Header>
             <div>
