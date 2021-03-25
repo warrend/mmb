@@ -50,7 +50,8 @@ const DEVICE = {
   desktop: `(min-width: 2560px)`,
   desktopL: `(min-width: 2560px)`,
 };
-export default {
+
+const theTheme = {
   colors: COLORS,
   spacing: SPACING,
   sizes: SIZES,
@@ -63,3 +64,5 @@ export default {
     externalIcon,
   },
 };
+
+export default theTheme;

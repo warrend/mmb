@@ -69,6 +69,7 @@ export const Image = styled.img`
   display: block;
   cursor: pointer;
   margin-bottom: ${({ theme }) => theme.spacing.normal};
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 `;
 
 export const ModalImage = styled.img`

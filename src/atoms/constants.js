@@ -1,7 +1,5 @@
 import { atom } from "recoil";
-import theme from "../theme";
-
-const theTheme = theme;
+import theTheme from "../theme";
 
 export default {
   theme: atom({
