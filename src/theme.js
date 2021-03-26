@@ -2,6 +2,7 @@ import githubIcon from "images/github-icon.svg";
 import linkedinIcon from "images/linkedin-icon.svg";
 import codepenIcon from "images/codepen-icon.svg";
 import externalIcon from "images/external-icon.svg";
+import sub from "images/sub.png";
 
 const COLORS = {
   primary: "hsl(200, 90%, 50%)",
@@ -63,6 +64,7 @@ const theTheme = {
     linkedinIcon,
     codepenIcon,
     externalIcon,
+    sub,
   },
 };
 

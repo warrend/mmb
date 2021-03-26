@@ -1,4 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const swim = keyframes`
+  0% {
+    left: -300px
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    left: 100%;
+  }
+`;
 
 export const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.font};
@@ -61,6 +79,19 @@ export const Body = styled.div`
 
 export const Icon = styled.img`
   margin-right: ${({ theme }) => theme.spacing.small};
+`;
+
+const animationHelper = css`
+  animation: ${swim} 10s ease-in;
+`;
+
+export const EasterIcon = styled.img`
+  position: fixed;
+  width: 300px;
+  top: 50%;
+  left: -350px;
+  transform: translateY(-50%);
+  ${({ start }) => (start ? animationHelper : null)};
 `;
 
 export const Image = styled.img`
