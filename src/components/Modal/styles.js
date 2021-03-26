@@ -16,8 +16,9 @@ export const Background = styled.div`
   top: 0;
   height: 100vh;
   width: 100%;
-  background: rgba(50, 64, 140, 0.2);
+  background: hsla(0, 0%, 0%, 0.5);
   z-index: 9999;
+  backdrop-filter: blur(2px);
 `;
 
 export const Container = styled.div`
