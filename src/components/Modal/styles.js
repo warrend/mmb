@@ -27,4 +27,5 @@ export const Container = styled.div`
   border-radius: 4px;
   max-width: 90%;
   overflow: hidden;
+  border-top: 8px solid ${({ theme }) => theme.colors.modalBorder};
 `;

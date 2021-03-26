@@ -91,7 +91,7 @@ function Main() {
             <div>
               <Title>{selected && selected.newspaper}</Title>
               <Info>
-                {selected && `${selected.description} ${selected.date}`}
+                {selected && `${selected.description} (${selected.date})`}
               </Info>
             </div>
             <Close onClick={() => setOpen(false)}>close</Close>

@@ -9,6 +9,7 @@ const COLORS = {
   lightFont: "hsl(0, 0%, 70%)",
   border: "hsl(0, 0%, 92%)",
   background: "hsl(0, 0%, 95%)",
+  modalBorder: "hsl(0, 0%, 84%)",
 };
 
 const TYPOGRAPHY = {
