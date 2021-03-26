@@ -71,17 +71,21 @@ export const Image = styled.img`
   cursor: pointer;
   margin-bottom: ${({ theme }) => theme.spacing.normal};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 export const ModalImage = styled.img`
   display: block;
-  max-height: 85vh;
+  max-height: 82vh;
   align-self: center;
   max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 export const InnerModal = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: ${({ theme }) => theme.spacing.normal};
 `;
