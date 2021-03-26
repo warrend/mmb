@@ -20,11 +20,12 @@ export const Heading = styled.h1`
 
 export const SiteDescription = styled.p`
   font: ${({ theme }) => theme.typography.subtitle};
-  max-width: 66%;
+  max-width: 90%;
   margin: 0 auto;
+  margin-bottom: ${({ theme }) => theme.spacing.small};
 
   @media ${({ theme }) => theme.device.tablet} {
-    max-width: 90%;
+    max-width: 50%;
   }
 `;
 
@@ -74,7 +75,7 @@ export const Image = styled.img`
 
 export const ModalImage = styled.img`
   display: block;
-  max-height: 75vh;
+  max-height: 85vh;
   align-self: center;
   max-width: 100%;
 `;

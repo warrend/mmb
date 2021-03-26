@@ -14,6 +14,7 @@ import {
   Top,
   Heading,
   SiteDescription,
+  Icon,
 } from "./styles";
 import { articles } from "articles";
 import Modal from "components/Modal";
@@ -71,6 +72,9 @@ function Main() {
           My mom collected just about every Beatles article she could get her
           hands on in the 1960s. Below are some highlights from the collection.
         </SiteDescription>
+        <Icon src={theme.images.githubIcon} />
+        <Icon src={theme.images.codepenIcon} />
+        <Icon src={theme.images.linkedinIcon} />
       </Top>
       <Body>
         {images.map((i) => (

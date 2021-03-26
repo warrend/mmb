@@ -26,4 +26,5 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   max-width: 90%;
+  overflow: hidden;
 `;
