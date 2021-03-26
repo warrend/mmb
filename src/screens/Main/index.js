@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import constants from "atoms/constants";
 import {
@@ -24,9 +24,37 @@ function Main() {
   const [theme] = useRecoilState(constants.theme);
   const [images, setImages] = useState([]);
   const [counter, setCounter] = useState(10);
+  const bodyRef = useRef(null);
 
   const [selected, setSelected] = useState(null);
   const [open, setOpen] = useState(false);
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const callbackFn = (entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFn, options);
+    console.log("obse", observer);
+    if (bodyRef.current) {
+      observer.observe(bodyRef.current);
+    }
+
+    return () => {
+      if (bodyRef.current) {
+        observer.unobserve(bodyRef.current);
+      }
+    };
+  }, [bodyRef, options]);
 
   useEffect(() => {
     if (counter === 0) {
@@ -41,8 +69,6 @@ function Main() {
 
     return () => clearInterval(startTimer);
   }, [counter]);
-
-  console.log("count", counter);
 
   useEffect(() => {
     const reqImages = require.context("../../images", true, /\.jpg$/);
@@ -83,7 +109,7 @@ function Main() {
   const { githubIcon, codepenIcon, linkedinIcon, sub } = theme.images;
 
   return (
-    <Wrapper>
+    <Wrapper id="imageArea">
       <EasterIcon src={sub} start={counter === 0} />
       <Top>
         <Heading>My Mom's Beatles</Heading>
@@ -95,7 +121,7 @@ function Main() {
         <Icon src={codepenIcon} />
         <Icon src={linkedinIcon} />
       </Top>
-      <Body>
+      <Body ref={bodyRef}>
         {images.map((i) => (
           <Image
             key={i.image}
