@@ -19,11 +19,13 @@ import {
 } from "./styles";
 import { articles } from "articles";
 import Modal from "components/Modal";
+import Loading from "components/Loading";
 
 function Main() {
   const [theme] = useRecoilState(constants.theme);
   const [images, setImages] = useState([]);
   const [counter, setCounter] = useState(10);
+  const [loading, setLoading] = useState(true);
   const bodyRef = useRef(null);
 
   const [selected, setSelected] = useState(null);
@@ -42,19 +44,19 @@ function Main() {
     threshold: 1.0,
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(callbackFn, options);
-    console.log("obse", observer);
-    if (bodyRef.current) {
-      observer.observe(bodyRef.current);
-    }
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(callbackFn, options);
 
-    return () => {
-      if (bodyRef.current) {
-        observer.unobserve(bodyRef.current);
-      }
-    };
-  }, [bodyRef, options]);
+  //   if (bodyRef.current) {
+  //     observer.observe(bodyRef.current);
+  //   }
+
+  //   return () => {
+  //     if (bodyRef.current) {
+  //       observer.unobserve(bodyRef.current);
+  //     }
+  //   };
+  // }, [bodyRef, options]);
 
   useEffect(() => {
     if (counter === 0) {
@@ -87,6 +89,7 @@ function Main() {
     });
 
     setImages(listOfImages.sort((a, b) => a.id - b.id));
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -107,6 +110,10 @@ function Main() {
   };
 
   const { githubIcon, codepenIcon, linkedinIcon, sub } = theme.images;
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <Wrapper id="imageArea">
