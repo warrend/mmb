@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
+import LazyLoad from "react-lazyload";
 import constants from "atoms/constants";
 import {
   Wrapper,
@@ -130,11 +131,13 @@ function Main() {
       </Top>
       <Body ref={bodyRef}>
         {images.map((i) => (
-          <Image
-            key={i.image}
-            src={i.image}
-            onClick={() => handleSelectImage(i)}
-          />
+          <LazyLoad offset={100} height={"100%"}>
+            <Image
+              key={i.image}
+              src={i.image}
+              onClick={() => handleSelectImage(i)}
+            />
+          </LazyLoad>
         ))}
       </Body>
       <Modal open={open} setOpen={setOpen}>
